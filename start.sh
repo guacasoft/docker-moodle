@@ -6,8 +6,10 @@ if [ ! -f /var/www/html/moodle/config.php ]; then
   # Here we generate random passwords (thank you pwgen!). The first two are for mysql users, the last batch for random keys in wp-config.php
   MOODLE_DB="moodle"
   MYSQL_PASSWORD=`pwgen -c -n -1 12`
-  MOODLE_PASSWORD=`pwgen -c -n -1 12`
+#  MOODLE_PASSWORD=`pwgen -c -n -1 12`
+  MOODLE_PASSWORD="password"
   SSH_PASSWORD=`pwgen -c -n -1 12`
+  VIRTUAL_HOST="172.30.25.163"
   #This is so the passwords show up in logs. 
   echo mysql root password: $MYSQL_PASSWORD
   echo moodle password: $MOODLE_PASSWORD

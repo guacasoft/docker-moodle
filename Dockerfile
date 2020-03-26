@@ -12,7 +12,7 @@ RUN apt update -y
 RUN apt -y upgrade
  
 # Basic Requirements
-RUN apt -y install mysql-server mysql-client pwgen python-setuptools curl git unzip python-pip python-dev libmysqlclient-dev
+#RUN apt -y install mysql-server mysql-client pwgen python-setuptools curl git unzip python-pip python-dev libmysqlclient-dev
 # Easy_install
 # RUN pip install supervisor
 
@@ -24,7 +24,7 @@ RUN apt -y install openssh-server
 RUN mkdir -p /var/run/sshd
 
 # mysql config
-RUN sed -i -e"s/^bind-address\s*=\s*127.0.0.1/bind-address = 0.0.0.0/" /etc/mysql/my.cnf
+#RUN sed -i -e"s/^bind-address\s*=\s*127.0.0.1/bind-address = 0.0.0.0/" /etc/mysql/my.cnf
 
 #RUN easy_install supervisor
 RUN pip install supervisor
