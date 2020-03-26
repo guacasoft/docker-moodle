@@ -1,5 +1,5 @@
 FROM ubuntu:latest
-MAINTAINER Sergio Gómez <sergio@quaip.com>
+MAINTAINER Guacasoft <guacassoft@gmail.com>
 
 # Keep upstart from complaining
 RUN dpkg-divert --local --rename --add /sbin/initctl
@@ -12,7 +12,7 @@ RUN apt update -y
 RUN apt -y upgrade
  
 # Basic Requirements
-RUN apt -y install mysql-server mysql-client pwgen python-setuptools curl git unzip python-pip
+RUN apt -y install mysql-server mysql-client pwgen python-setuptools curl git unzip python-pip python-dev libmysqlclient-dev
 # Easy_install
 # RUN pip install supervisor
 
