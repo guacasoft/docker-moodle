@@ -17,7 +17,7 @@ RUN apt -y upgrade
 # RUN pip install supervisor
 
 # Moodle Requirements
-RUN apt -y install apache2 php php7.2-gd libapache2-mod-php postfix wget supervisor php7.2-pgsql vim curl libcurl4 libcurl4-openssl-dev php7.2-curl php7.2-xmlrpc php7.2-intl php7.2-mysql php7.2-mbstring php7.2-intl php7.2-xmlrpc php7.2-ldap php7.2-pspell php7.2-xml php7.2-zip php7.2-soap
+RUN apt -y install apache2 php php7.2-gd libapache2-mod-php postfix wget supervisor php7.2-pgsql vim curl libcurl4 libcurl4-openssl-dev php7.2-curl php7.2-xmlrpc php7.2-intl php7.2-mysql php7.2-mbstring php7.2-intl php7.2-xmlrpc php7.2-ldap php7.2-pspell php7.2-xml php7.2-zip php7.2-soap python-pip curl git unzip pytho-setuptools
 
 # SSH
 RUN apt -y install openssh-server
