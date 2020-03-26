@@ -1,4 +1,4 @@
-FROM ubuntu:latest
+FROM ubuntu:18.04
 MAINTAINER Guacasoft <guacassoft@gmail.com>
 
 # Keep upstart from complaining
@@ -27,17 +27,17 @@ RUN mkdir -p /var/run/sshd
 #RUN sed -i -e"s/^bind-address\s*=\s*127.0.0.1/bind-address = 0.0.0.0/" /etc/mysql/my.cnf
 
 #RUN easy_install supervisor
-RUN pip install supervisor
-ADD ./start.sh /start.sh
-ADD ./foreground.sh /etc/apache2/foreground.sh
-ADD ./supervisord.conf /etc/supervisord.conf
+#RUN pip install supervisor
+#ADD ./start.sh /start.sh
+#ADD ./foreground.sh /etc/apache2/foreground.sh
+#ADD ./supervisord.conf /etc/supervisord.conf
 
 ADD https://download.moodle.org/moodle/moodle-latest.tgz /var/www/moodle-latest.tgz
 RUN cd /var/www; tar zxvf moodle-latest.tgz; mv /var/www/moodle /var/www/html
 RUN chown -R www-data:www-data /var/www/html/moodle
 RUN mkdir /var/moodledata
 RUN chown -R www-data:www-data /var/moodledata; chmod 777 /var/moodledata
-RUN chmod 755 /start.sh /etc/apache2/foreground.sh
+#RUN chmod 755 /start.sh /etc/apache2/foreground.sh
 
 EXPOSE 22 80
 #CMD ["/bin/bash", "/start.sh"]
